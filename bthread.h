@@ -25,7 +25,15 @@
 
 #define PTHREAD_CANCELED ((void *) -1)
 
+#include <pthread.h>
+
+#ifdef __cplusplus
+extern "C" {
+#endif
 int pthread_setcancelstate (int , int *);
 int pthread_setcanceltype (int , int *);
 void pthread_testcancel (void);
 int pthread_cancel (pthread_t t);
+#ifdef __cplusplus
+}
+#endif
